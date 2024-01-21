@@ -55,8 +55,19 @@ const TablePage = () => {
               {tableHeads.map(
                 (columnName, columnIndex) =>
                   columnVisibility[columnName] && (
-                    <td key={columnIndex} className="px-6 py-4 max-w-max">
-                      {item[columnName] ? item[columnName] : "null value"}
+                    <td
+                      key={columnIndex}
+                      className={`px-6 py-4 max-w-max ${
+                        columnName === "deal_status"
+                          ? item[columnName] === 1
+                            ? "bg-green-500 text-white"
+                            : "bg-red-500 text-white"
+                          : ""
+                      }`}
+                    >
+                      {item[columnName] !== undefined
+                        ? item[columnName]
+                        : "null value"}
                     </td>
                   )
               )}
