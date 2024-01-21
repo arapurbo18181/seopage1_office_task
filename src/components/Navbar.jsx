@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
-  console.log(location);
   return (
     <nav className="bg-white border-gray-200 border-b py-4">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">

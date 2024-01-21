@@ -10,9 +10,8 @@ export const ApiProvider = ({ children }) => {
   const [Data, setData] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get("http://erp.seopage1.net/api/leads");
+      const response = await axios.get("https://erp.seopage1.net/api/leads");
       const data = response.data;
-      console.log(data.data);
       setData(data.data);
     };
     getData();
