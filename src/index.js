@@ -1,13 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { ApiProvider } from "./context/ApiContext";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ApiProvider>
+        <Navbar />
+        <App />
+      </ApiProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
